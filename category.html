@@ -20,7 +20,7 @@
                <div class="text d-flex flex-column justify-content-center align-items-start">
                   <span class="big name">{{ package.name }} {% if package.countdownEnds %}<span class="text-danger">&nbsp;&nbsp;<i
                      class="fa fa-clock-o"></i> <br /><span class="countdown-to badge px-0" data-countdown="{{ package.countdownEnds }}">{{
-                  __("Ending Soon!") }}</span></span>{% endif %}</span>
+                  __("¡Finaliza pronto!") }}</span></span>{% endif %}</span>
                   {% if package.customPrice == false and package.price > 0 %}
                   <strong class="h4 price">
                   {% if package.discount.applied %}
@@ -35,10 +35,10 @@
                      class="btn btn-info toggle-modal me-2 drop-shadow"><i class="fa-solid fa-info"></i></a>
                   {% if package.basket %}
                   <a href="/checkout/packages/remove/{{ package.id }}"
-                     class="btn btn--remove cursorAura drop-shadow d-flex justify-content-center align-items-center"><i class="fa-solid fa-trash-can-arrow-up me-1"></i>Remove</a>
+                     class="btn btn--remove cursorAura drop-shadow d-flex justify-content-center align-items-center"><i class="fa-solid fa-trash-can-arrow-up me-1"></i>Eliminar</a>
                   {% else %}
                   <a href="/checkout/packages/add/{{ package.id }}"
-                     class="btn btn--add cursorAura drop-shadow d-flex justify-content-center align-items-center"><i class="fa-solid fa-cart-plus me-1"></i>Add to cart</a>
+                     class="btn btn--add cursorAura drop-shadow d-flex justify-content-center align-items-center"><i class="fa-solid fa-cart-plus me-1"></i>Añadir al carrito</a>
                   {% endif %}   
                </div>
             </div>
@@ -48,7 +48,7 @@
          <div class="grid-packages p-4 position-relative">
             {% for package in category.packages %}
             <div class="package w-100 drop-shadow" id="package--{{ package.id }}">
-               <a class="package-img toggle-modal toggle-tooltip " href="javascript:void(0);" data-remote="/package/{{ package.id }}" title="{{ __("Click for more details") }}">
+               <a class="package-img toggle-modal toggle-tooltip " href="javascript:void(0);" data-remote="/package/{{ package.id }}" title="{{ __("Click para mas detalles") }}">
                <img src="{{ package.image.url }}" class="drop-shadow" alt="{{package.name}}" >
                </a>
                <div class="package-info mt-2">
@@ -66,10 +66,10 @@
                         class="btn btn-info toggle-modal drop-shadow"><i class="fa-solid fa-info"></i></a>
                      {% if package.basket %}
                      <a href="/checkout/packages/remove/{{ package.id }}"
-                        class="btn btn--remove cursorAura drop-shadow d-flex justify-content-center align-items-center"><i class="fa-solid fa-trash-can-arrow-up me-1"></i>Remove</a>
+                        class="btn btn--remove cursorAura drop-shadow d-flex justify-content-center align-items-center"><i class="fa-solid fa-trash-can-arrow-up me-1"></i>Eliminar</a>
                      {% else %}
                      <a href="/checkout/packages/add/{{ package.id }}"
-                        class="btn btn--add cursorAura drop-shadow d-flex justify-content-center align-items-center"><i class="fa-solid fa-cart-plus me-1"></i>Add to cart</a>
+                        class="btn btn--add cursorAura drop-shadow d-flex justify-content-center align-items-center"><i class="fa-solid fa-cart-plus me-1"></i>Añadir al carrito</a>
                      {% endif %}                     
                   </div>
                </div>

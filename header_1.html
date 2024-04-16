@@ -1,7 +1,7 @@
 <!-- Header 1 -->
 <header class="container position-relative">
    <div class="line-1 d-flex justify-content-between align-items-center pt-4">
-      <a href="/" class="header-top-btn"><i class="fa-solid fa-arrow-left me-1 d-none d-sm-inline-block"></i> Main Site</a>
+      <a href="/" class="header-top-btn"><i class="fa-solid fa-arrow-left me-1 d-none d-sm-inline-block"></i> Sitio Principal</a>
       <div class="d-flex justify-content-center align-items-center">
          <div class="dropdown curr me-2">
             <button class="header-top-btn dropdown-toggle" type="button" id="currencyButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -17,22 +17,22 @@
          </div>
          {% if basket.username %}
 	<a class="header-top-btn login-btn d-flex justify-content-center align-items-center mx-2" href="/checkout/logout">
-             <div class="text-end">
-               <p class="big mb-0">Logout</p>
+    </a>         <div class="text-end">
+               <p class="big mb-0">Cerrar sesión</p>
             </div>
          </a>
          <a class="header-top-btn login-btn d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#basketModal">
             <div class="text-end me-2">
-               <p class="big mb-1">Welcome, {{basket.ign}}</p>
-               <p class="sml mb-0">Cart ({{basket.packages|length }}) - <span>{{ basket.price|money }}</span> {{ basket.currency }}</p>
+               <p class="big mb-1">Bienvenido, {{basket.ign}}</p>
+               <p class="sml mb-0">Carrito ({{basket.packages|length }}) - <span>{{ basket.price|money }}</span> {{ basket.currency }}</p>
             </div>
             <img src="https://mc-heads.net/avatar/{{basket.ign}}/32">
          </a>
          {% else %}
          <a class="header-top-btn login-btn d-flex justify-content-center align-items-center" href="/login">
             <div class="text-end me-2">
-               <p class="big mb-1">Guest</p>
-               <p class="sml mb-0">CLICK TO LOGIN</p>
+               <p class="big mb-1">Invitado</p>
+               <p class="sml mb-0">CLIC PARA INICIAR SESIÓN</p>
             </div>
             <img src="https://mc-heads.net/avatar/MHF_Steve/32">
          </a>
@@ -44,7 +44,7 @@
          <i class="fa-solid fa-circle-play"></i>
          <div class="text ms-3">
             <p class="mb-1 server-ip" id="server-ip">{{server}}</p>
-            <p class="mb-0 server-counter d-md-block d-none">JOIN <span id="server-counter">0</span> OTHER PLAYERS</p>
+            <p class="mb-0 server-counter d-md-block d-none">ÚNETE A <span id="server-counter">0</span> OTROS JUGADORES</p>
             <p class="mb-0 server-counter d-block d-md-none"><span id="server-counter-2">0</span> PLAYERS</p>
          </div>
       </button>
@@ -54,8 +54,8 @@
       <a id="discord-copy" class="d-flex justify-content-center align-items-center" href="{{discordLink}}" target="_blank">
          <div class="text text-end me-3">
             <p class="mb-1 discord-ip" id="discord-ip">{{discord}}</p>
-            <p class="mb-0 discord-counter d-md-block d-none">JOIN <span id="discord-counter">0</span> OTHER PEOPLE</p>
-            <p class="mb-0 discord-counter d-block d-md-none"><span id="discord-counter-2">0</span> PEOPLE</p>
+            <p class="mb-0 discord-counter d-md-block d-none">ÚNETE A <span id="discord-counter">0</span> OTRAS PERSONAS</p>
+            <p class="mb-0 discord-counter d-block d-md-none"><span id="discord-counter-2">0</span> PERSONAS</p>
          </div>
          <i class="fa-brands fa-discord"></i>
       </a>
@@ -68,7 +68,7 @@
             <div class="d-flex justify-content-center align-items-center">
                <img src="https://mc-heads.net/avatar/{{basket.ign}}/48" class="me-2 drop-shadow">
                <div class="info d-flex justify-content-center align-items-start flex-column">
-                  <span class="sml">BASKET OF</span>
+                  <span class="sml">CESTA DE</span>
                   <span class="big">{{basket.ign}}</span>
                </div>
             </div>
@@ -102,13 +102,13 @@
                   <div class="package-buttons d-flex justify-content-center align-items-center">
                      <a href="javascript:void(0);" data-remote="/package/{{ package.id }}"
                         class="btn btn-info toggle-modal drop-shadow"><i class="fa-solid fa-info"></i></a>
-                     <a href="/checkout/packages/remove/{{ package.id }}" class="btn btn--remove cursorAura drop-shadow d-flex justify-content-center align-items-center"><i class="fa-solid fa-trash-can-arrow-up me-1"></i>Remove</a>
+                     <a href="/checkout/packages/remove/{{ package.id }}" class="btn btn--remove cursorAura drop-shadow d-flex justify-content-center align-items-center"><i class="fa-solid fa-trash-can-arrow-up me-1"></i>Eliminar</a>
                   </div>
                </div>
                {% endfor %}
             </div>
             {% endif %}
-            <a href="/checkout/basket" class="btn btn-checkout w-100 mt-1"><i class="fa-solid fa-cash-register me-1"></i>{{__("Checkout") }}</a>
+            <a href="/checkout/basket" class="btn btn-checkout w-100 mt-1"><i class="fa-solid fa-cash-register me-1"></i>{{__("Pagar") }}</a>
          </div>
       </div>
    </div>
