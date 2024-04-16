@@ -11,14 +11,14 @@
       <div class="col-md-9 col-12 mainbar">
                
          <div class="options p-4 mb-2 position-relative">
-             <h4 class="mb-4">{{ __("Enter package options") }}</h4>
+             <h4 class="mb-4">{{ __("Ingrese las opciones del paquete") }}</h4>
              <div class="variables">
                     <form method="post">
                         {% if options.package.chooseServer %}
                         <div class="form-group">
-                            <label class="mb-2">{{ __("Please choose which server to receive this package upon") }}</label>
+                            <label class="mb-2">{{ __("Por favor, elija en qué servidor recibir este paquete") }}</label>
                             <select class="form-control input-lg" name="server">
-                                <option value="">{{ __("Please choose which server to receive this package upon") }}</option>
+                                <option value="">{{ __("Por favor, elija en qué servidor recibir este paquete") }}</option>
                                 {% for server in options.servers %}
                                 <option value="{{ server.id }}">{{ server.name }}</option>
                                 {% endfor %}
@@ -28,9 +28,9 @@
 
                         {% if options.package.customPrice %}
                         <div class="form-group custom-price">
-                            <label class="mb-2">{{ __("Please enter an amount greater than " ~ options.package.price ~ " " ~ store.currency ~ " that you'd like to pay.") }}</label>
+                            <label class="mb-2">{{ __("Por favor, ingrese una cantidad mayor que " ~ options.package.price ~ " " ~ store.currency ~ " que le gustaría pagar.") }}</label>
                             <div class="input-group">
-                                <input type="text" name="price" class="form-control input-lg" placeholder="{{ __("Please enter the amount you'd like to pay.") }}">
+                                <input type="text" name="price" class="form-control input-lg" placeholder="{{ __("Por favor, ingrese la cantidad que le gustaría pagar.") }}">
                                 <div class="input-group-append">
                                     <span class="input-group-text btn">{{ store.currency }}</span>
                                 </div>
@@ -78,10 +78,10 @@
                         <div class="row align-items-center end-line mt-4">
                             <div class="col-6 text-start">
                                 <a href="/category/{{ options.package.category }}" class="btn ">{{
-                                    __("Back") }}</a>
+                                    __("Atrás") }}</a>
                             </div>
                             <div class="col-6 text-end">
-                                <input type="submit" value="{{ __("Continue") }}" name="submit" class="btn " />
+                                <input type="submit" value="{{ __("Continuar") }}" name="submit" class="btn " />
                             </div>
                         </div>
                     </form>

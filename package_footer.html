@@ -5,9 +5,9 @@
             <div class="col-12 col-lg-4 text-start mb-3 mb-lg-0 price">
                 <strong class="h4 mb-0">
                     {% if package.customPrice %}
-                        <b class="h5">{{ __("You decide how much to pay.") }}</b>
+                        <b class="h5">{{ __("Tú decides cuánto pagar.") }}</b>
                     {% elseif package.price == 0.00 %}
-                        <span class="h5">{{ __("This item is free.") }}</span>
+                        <span class="h5">{{ __("Este artículo es gratis.") }}</span>
                     {% else %}
                         {% if package.discount.applied %}
                             <del class="text-danger small font-weight-bold">{{ package.discount.original|money }}</del>
@@ -20,23 +20,23 @@
             <div class="col-12 col-lg-8 text-center text-lg-right d-flex justify-content-end align-items-center">
                     {% if package.basket %}
                         <a href="/checkout/packages/remove/{{ package.id }}" class="btn btn--rm btn-primary d-block d-md-inline-block gift-weight">{{
-                        __("Remove") }}</a>
+                        __("Eliminar") }}</a>
                     {% else %}
                         {% if package.type != "single" %}
                             <a href="/checkout/packages/add/{{ package.id }}/subscribe" class="btn btn--add btn-success d-block d-md-inline-block gift-weight" {%
-                            if package.purchasable==false %}disabled data-toggle="tooltip" title="{{ package.reason }}"{% endif %}>{{ __("Subscribe") }}</a>
+                            if package.purchasable==false %}disabled data-toggle="tooltip" title="{{ package.reason }}"{% endif %}>{{ __("Suscribirse") }}</a>
                         {% endif %}
 
                         {% if package.type != "subscription" %}
                             <a href="/checkout/packages/add/{{ package.id }}/single" class="btn btn--add btn-primary d-block d-md-inline-block gift-weight" {% if
-                            package.purchasable==false %}disabled data-toggle="tooltip" title="{{ package.reason }}"{% endif %}>{{ __("Add to basket") }}</a>
+                            package.purchasable==false %}disabled data-toggle="tooltip" title="{{ package.reason }}"{% endif %}>{{ __("Añadir a la cesta") }}</a>
                         {% endif %}
                     {% endif %}
                 
 
                 {% if package.disable_gifting == false and package.storeGiftingEnabled %}
                     <a href="#" type="button" data-toggle="collapse" data-target="#giftFields"
-                        aria-expanded="false" aria-controls="giftFields" class="btn btn--gift btn-secondary d-block d-md-inline-block gift-weight btn-gift ms-1">{{ __("Gift this package") }} <i class="fas fa-chevron-down ml-1"></i>
+                        aria-expanded="false" aria-controls="giftFields" class="btn btn--gift btn-secondary d-block d-md-inline-block gift-weight btn-gift ms-1">{{ __("Regalar este paquete") }} <i class="fas fa-chevron-down ml-1"></i>
                     </a>
                 {% endif %}
 
@@ -48,10 +48,10 @@
                 <div class="col-12">
                     <form name="gift-form" method="get" action="/checkout/packages/add/{{ package.id }}/single/gift">
                         <div class="input-group mt-3">
-                            <input type="text" name="username" placeholder="{{ __("Enter a username to gift this package to") }}"
+                            <input type="text" name="username" placeholder="{{ __("Ingresa un nombre de usuario para regalar este paquete") }}"
                                 class="form-control" />
                             <div class="input-group-append">
-                                <button class="btn btn-primary btn-sm" type="submit"><i class="fa-solid fa-gift me-1"></i>Gift</button>
+                                <button class="btn btn-primary btn-sm" type="submit"><i class="fa-solid fa-gift me-1"></i>Regalo</button>
                             </div>
 
                         </div>

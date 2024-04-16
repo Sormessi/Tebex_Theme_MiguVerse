@@ -9,7 +9,7 @@
       </div>
       <div class="col-lg-9 col-12 mainbar mt-lg-0 mt-2">
          <div class="basket position-relative mb-2 p-4">
-            <h4 class="mb-1"><i class="fa-solid fa-basket-shopping me-1"></i>{{ __("Your Basket") }}</h4>
+            <h4 class="mb-1"><i class="fa-solid fa-basket-shopping me-1"></i>{{ __("Tu Cesta") }}</h4>
             <div class="row second-line">
                <div class="col-12">
                   <div class="checkout">
@@ -50,15 +50,15 @@
             </div>
          </div>
          <div class="coupons p-4">
-            <h4 class="mb-2"><i class="fa-solid fa-gift me-1"></i>{{ __("Redeem coupons / gift cards") }}</h4>
+            <h4 class="mb-2"><i class="fa-solid fa-gift me-1"></i>{{ __("Canjear cupones / tarjetas de regalo") }}</h4>
             <div class="coupons">
                <div class="redeem">
                   <form method="post" action="/checkout/basketcoupon/add">
                      <div class="input-group mb-3">
-                        <input type="text" name="coupon" placeholder="{{ __("Have a coupon code? Enter it here and click redeem.") }}"
+                        <input type="text" name="coupon" placeholder="{{ __("¿Tienes un código de cupón? Ingrésalo aquí y haz clic en canjear.") }}"
                         class="form-control">
                         <div class="input-group-append">
-                           <button class="btn btn-primary">{{ __("Redeem") }} <i class="fa fa-chevron-right"></i></button>
+                           <button class="btn btn-primary">{{ __("Canjear") }} <i class="fa fa-chevron-right"></i></button>
                         </div>
                      </div>
                   </form>
@@ -67,7 +67,7 @@
             {% if basket.coupons|length > 0 %}
                <div class="col-12 col-xl-6">
                   <div class="redeemed mt-4 mt-xl-0">
-                     <h4 class=""><i class="fa-solid fa-check-to-slot"></i>{{ __("Redeemed coupons / gift cards") }}</h4>
+                     <h4 class=""><i class="fa-solid fa-check-to-slot"></i>{{ __("Cupones / tarjetas de regalo canjeados") }}</h4>
                      <table class="table table-hover table-striped table-responsive">
                         <tbody>
                            {% for coupon in basket.coupons %}
@@ -92,22 +92,22 @@
                <div class="panel panel-default d-flex drop-shadow">
                   <div class="panel-body is-lhs p-4">
                      <div class="panel-heading">
-                        <h4 class="mb-2"><i class="fa-solid fa-wallet me-1"></i>Pay {{ basket.price|money }} {{ basket.currency }}</h4>
+                        <h4 class="mb-2"><i class="fa-solid fa-wallet me-1"></i>Paga {{ basket.price|money }} {{ basket.currency }}</h4>
                      </div>
                      <p>
-                        You will be taken to Tebex Checkout, a secure and trusted
-                        payment playform where you can choose to pay with PayPal
-                        or a credit/debit card.
+                        Serás llevado a Tebex Checkout, una plataforma de pago segura
+                        y confiable donde puedes optar por pagar con PayPal o una
+                        tarjeta de crédito/débito.
                      </p>
                      <div class="secure">
                         <i class="fa-solid fa-lock me-1"></i>
-                        <span>SECURE &amp; ENCRYPTED</span>
+                        <span>SEGURO Y CIFRADO</span>
                         <img src="https://i.imgur.com/k5fyRPQ.png" alt="PayPal or Credit/Debit Card">
                      </div>
                   </div>
                   <div class="panel-body is-rhs p-4 position-relative d-flex justify-content-center align-items-center">
                      <a href="/checkout/pay" class="btn btn-success drop-shadow">
-                     PAY {{ basket.price|money }} {{ basket.currency }} NOW
+                     PAGA {{ basket.price|money }} {{ basket.currency }} AHORA
                      <i class="fa-solid fa-right-long"></i>
                      </a>
                      <div class="bg"></div>

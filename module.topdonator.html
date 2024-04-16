@@ -8,31 +8,31 @@
         {% endif %}
     </div>
     <div class="desc d-flex flex-column align-items-start justify-content-center">
-        <h4 class="mb-2"><i class="fa-solid fa-crown me-1"></i>Top Donator</h4>
+        <h4 class="mb-2"><i class="fa-solid fa-crown me-1"></i>Donador principal</h4>
         {% if module.ign %}
             <p class="mb-0"><b>{{ module.ign }}</b>,
             <span class="text-shadow">
                 {% if module.displayAmount %}
-                    {{ __("donated") }} {{ module.total|money }} <small>{{ store.currency }}</small>
+                    {{ __("donó") }} {{ module.total|money }} <small>{{ store.currency }}</small>
                 {% else %}
-                    {{ __("donated the most ") }}
+                    {{ __("donó el que más ") }}
                 {% endif %}
                 
                 {% if module.period == "hourly" %}
-                    {{ __("this hour.") }}
+                    {{ __("esta hora.") }}
                 {% elseif module.period == "daily" %}
-                    {{ __("today.") }}
+                    {{ __("hoy.") }}
                 {% elseif module.period == "monthly" %}
-                    {{ __("this month.") }}
+                    {{ __("este mes.") }}
                 {% elseif module.period == "yearly" %}
-                   {{ __("this year.") }}
+                   {{ __("este año.") }}
                 {% else %}
-                    {{ __("this week.") }}
+                    {{ __("esta semana.") }}
                 {% endif %}    
             </span>
             </p>
         {% else %}
-            <p class="mb-0">Your name and skin can be here!</p>
+            <p class="mb-0">¡Tu nombre y skin pueden estar aquí!</p>
         {% endif %}
     </div>
 </div>

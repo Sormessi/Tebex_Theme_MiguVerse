@@ -48,7 +48,7 @@
          <div class="grid-packages p-4 position-relative">
             {% for package in category.packages %}
             <div class="package w-100 drop-shadow" id="package--{{ package.id }}">
-               <a class="package-img toggle-modal toggle-tooltip " href="javascript:void(0);" data-remote="/package/{{ package.id }}" title="{{ __("Click para mas detalles") }}">
+               <a class="package-img toggle-modal toggle-tooltip " href="javascript:void(0);" data-remote="/package/{{ package.id }}" title="{{ __("Clic para mas detalles") }}">
                <img src="{{ package.image.url }}" class="drop-shadow" alt="{{package.name}}" >
                </a>
                <div class="package-info mt-2">

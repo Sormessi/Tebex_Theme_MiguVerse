@@ -4,9 +4,9 @@
     <h4 class="mb-3 d-flex justify-content-between align-items-center"><i class="fa-solid fa-signal me-1 "></i>{{ module.header }}
 
         {% if module.online %}
-        <span class="badge badge-success d-inline-block">{{ __("Online") }}</span>
+        <span class="badge badge-success d-inline-block">{{ __("En línea") }}</span>
         {% else %}
-        <span class="badge badge-danger d-inline-block">{{ __("Offline") }}</span>
+        <span class="badge badge-danger d-inline-block">{{ __("Desconectado") }}</span>
         {% endif %}
 
     </h4>
@@ -21,7 +21,7 @@
             <b>0</b>
             /0
             {% endif %}
-            {{ __("players online.") }}
+            {{ __("jugadores en línea.") }}
         </p>
     </div>
 </div>

@@ -14,14 +14,14 @@
     </div>
     {% if module.communitygoal.repeatable == 1 %}
         <hr />
-        <p>{{ __("Times Achieved:") }} {{ module.communitygoal.times_achieved }}</p>
+        <p>{{ __("Veces logrado:") }} {{ module.communitygoal.times_achieved }}</p>
     {% endif %}
     <p class="mt-2 text-center">
         {% if module.displayAmount %}
         <strong>{{ module.total }} / {{ module.target }} {{ store.currency }}</strong> ({{ module.percentage }}%)
         {% endif %}
         {% if module.displayAmount == false %}
-        {{ module.percentage }}% {{ __("completed") }}
+        {{ module.percentage }}% {{ __("completado") }}
         {% endif %}
     </p>
 </div>

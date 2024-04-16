@@ -5,7 +5,7 @@
     <div class="jumbotron page-title-inner">
         <div class="container">
             <header class="page-title">
-                <h1 class="text-center text-white text-shadow">{{ __("Order Status") }}</h1>
+                <h1 class="text-center text-white text-shadow">{{ __("Estado del Pedido") }}</h1>
             </header>
         </div>
     </div>
@@ -14,7 +14,7 @@
          <section class="bg-white p-0 row no-gutters border-left border-right">
             <div class="col-12">
                 <div class="p-xl-5 p-4">
-                    <p>{{ __("To look up a payment, you must provide your Minecraft username, and one of: transaction ID, email address or the value of the purchase:") }}</p>
+                    <p>{{ __("Para buscar un pago, debes proporcionar tu nombre de usuario de Minecraft, y uno de los siguientes: ID de transacción, dirección de correo electrónico o el valor de la compra:") }}</p>
 
                     <form action='?' method='post'>
                         <div class="form-group">
@@ -22,7 +22,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-user"></i></span>
                                 </div>
-                                <input type="text" class="form-control" name="ign" value="{{ params.ign }}" placeholder="Enter username" />
+                                <input type="text" class="form-control" name="ign" value="{{ params.ign }}" placeholder="Ingresa el nombre de usuario" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -30,7 +30,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-fingerprint"></i></span>
                                 </div>
-                                <input type="text" class="form-control" name="txn" value="{{ params.txn }}" placeholder="Transaction ID" />
+                                <input type="text" class="form-control" name="txn" value="{{ params.txn }}" placeholder="ID de Transacción" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -38,7 +38,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                                 </div>
-                                <input type="text" class="form-control" name="email" value="{{ params.email }}" placeholder="Email Address" />
+                                <input type="text" class="form-control" name="email" value="{{ params.email }}" placeholder="Dirección de Correo Electrónico" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -46,20 +46,20 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-money-bill"></i></span>
                                 </div>
-                                <input type="text" class="form-control" name="amount" value="{{ params.amount }}" placeholder="Purchase Value" />
+                                <input type="text" class="form-control" name="amount" value="{{ params.amount }}" placeholder="Valor de la Compra" />
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-12 text-right">
-                                <button type="submit" class="btn btn-success">{{ __("Search Payments") }}</button>
+                                <button type="submit" class="btn btn-success">{{ __("Buscar Pagos") }}</button>
                             </div>
                         </div>
                     </form>
 
                     {% if params %}
                         {% if payments|length > 0 %}
-                            <p>{{ _p("There is :payment_count matching payment",  payments|length, {"payment_count": payments|length}) }}</p>
+                            <p>{{ _p("Hay :payment_count pago que coincide",  payments|length, {"payment_count": payments|length}) }}</p>
 
                             {% for payment in payments %}
                                 <table class="table table-hover table-striped well border">
@@ -70,26 +70,26 @@
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td>{{ __("Order Price:") }}</td>
+                                        <td>{{ __("Precio del Pedido:") }}</td>
                                         <td>{{ payment.currency }}{{ payment.price|number_format(2, ".", ",") }}</td>
                                     </tr>
                                     <tr>
-                                        <td>{{ __("Commands Executed:") }}</td>
+                                        <td>{{ __("Comandos Ejecutados:") }}</td>
                                         <td>{{ payment.commands_executed }}</td>
                                     </tr>
                                     <tr>
-                                        <td>{{ __("Commands Due:") }}</td>
+                                        <td>{{ __("Comandos Pendientes:") }}</td>
                                         <td>{{ payment.commands_due }}</td>
                                     </tr>
                                     <tr>
-                                        <td>{{ __("Commands Scheduled:") }}</td>
+                                        <td>{{ __("Comandos Programados:") }}</td>
                                         <td>{{ payment.commands_scheduled }}</td>
                                     </tr>
                                     </tbody>
                                 </table>
                             {% endfor %}
                         {% else %}
-                            <p>{{ __("There are no payments matching these details") }}</p>
+                            <p>{{ __("No hay pagos que coincidan con estos detalles") }}</p>
                         {% endif %}
                     {% endif %}
                 </div>

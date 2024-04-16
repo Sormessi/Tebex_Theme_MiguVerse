@@ -67,8 +67,8 @@
       <footer class="mt-5 mb-4">
           <div class="container d-flex justify-content-between align-items-center flex-column flex-md-row">
          <div class="footer-left text-center text-md-start mb-3 mb-md-0">
-            <p class="mb-0">Copyright @ <span id="thisyear">2024</span> {{store.name}}. All Rights Reserved.</p>
-            <small class="mb-0">We are not affiliated with Mojang AB.</small>
+            <p class="mb-0">Copyright @ <span id="thisyear">2024</span> {{store.name}}. Todos los derechos reservados.</p>
+            <small class="mb-0">No estamos afiliados con Mojang AB.</small>
          </div>
          <div class="row no-gutters align-items-center footer-right">
             <div class="col-12 text-center text-md-right text-heading-font text-white">
@@ -76,7 +76,7 @@
                <div class="btn-group dropup">
                   <button type="button" class="btn btn-primary d-block d-sm-inline-block dropdown-toggle"
                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fas fa-globe mr-2"></i> {{__("Language") }}
+                  <i class="fas fa-globe mr-2"></i> {{__("Idioma") }}
                   </button>
                   <div class="dropdown-menu">
                      {% for locale, name in store.locales %}
@@ -111,7 +111,7 @@
                  setInterval(function (ele) {
                      timeLeft = parseInt(ele.attr("data-countdown"));
                      if (timeLeft == 0) {
-                         ele.html("Time Expired!");
+                         ele.html("¡Tiempo expirado!");
                      } else {
                          timeLeft--;
                          ele.attr("data-countdown", timeLeft);
@@ -132,7 +132,7 @@
 let thisyear = document.getElementById("thisyear").innerHTML = new Date().getFullYear();
           try {
                 fetch(`https://api.minetools.eu/ping/{{server}}`).then(res => res.json()).then(data => setServerCount(data.players.online));
-            } catch { console.log("Unable to fetch server player count from API.") }
+            } catch { console.log("No se puede obtener el recuento de jugadores de Discord desde la API.") }
             try {
                 
                 fetch(`https://discord.com/api/v9/invites/{{discordID}}?with_counts=true`)
@@ -144,13 +144,13 @@ let thisyear = document.getElementById("thisyear").innerHTML = new Date().getFul
                 try {
                     document.getElementById("server-counter").innerHTML = count;
                     document.getElementById("server-counter-2").innerHTML = count;
-                } catch { console.log("Unable to set server player count.") }
+                } catch { console.log("No se puede establecer el recuento de jugadores del servidor.") }
             }
             function setDiscordCount(count) {
                 try {
                     document.getElementById("discord-counter").innerHTML = count;
                     document.getElementById("discord-counter-2").innerHTML = count;
-                } catch { console.log("Unable to set Discord player count.") }
+                } catch { console.log("No se puede establecer el recuento de jugadores de Discord.") }
             }
             
             function subtractPackage(id) {
@@ -163,10 +163,10 @@ let thisyear = document.getElementById("thisyear").innerHTML = new Date().getFul
       <script>
        document.getElementById('ip-copy').addEventListener('click', function() {
         Swal.fire({
-            title: 'Hello!',
-            text: 'You have copied the server IP',
+            title: '¡Hola!',
+            text: 'Has copiado la IP del servidor',
             icon: 'success',
-            confirmButtonText: 'Cool'
+            confirmButtonText: 'Genial'
         });
         navigator.clipboard.writeText(`{{server}}:{{serverPORT}}`);
     });
