@@ -17,22 +17,22 @@
          </div>
          {% if basket.username %}
 	<a class="header-top-btn login-btn d-flex justify-content-center align-items-center mx-2" href="/checkout/logout">
-    </a>         <div class="text-end">
+             <div class="text-end">
                <p class="big mb-0">Cerrar sesión</p>
             </div>
          </a>
          <a class="header-top-btn login-btn d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#basketModal">
             <div class="text-end me-2">
                <p class="big mb-1">Bienvenido, {{basket.ign}}</p>
-               <p class="sml mb-0">Carrito ({{basket.packages|length }}) - <span>{{ basket.price|money }}</span> {{ basket.currency }}</p>
+               <p class="sml mb-0">Carrito ({{basket.packages|length }}) - <span>{{ basket.price|money }}</span> {{ basket.currency }}</span> {{ basket.currency }}</p>
             </div>
             <img src="https://mc-heads.net/avatar/{{basket.ign}}/32">
          </a>
          {% else %}
          <a class="header-top-btn login-btn d-flex justify-content-center align-items-center" href="/login">
             <div class="text-end me-2">
-               <p class="big mb-1">Invitado</p>
-               <p class="sml mb-0">CLIC PARA INICIAR SESIÓN</p>
+               <p class="big mb-1">Guest</p>
+               <p class="sml mb-0">CLICK TO LOGIN</p>
             </div>
             <img src="https://mc-heads.net/avatar/MHF_Steve/32">
          </a>
@@ -45,7 +45,7 @@
          <div class="text ms-3">
             <p class="mb-1 server-ip" id="server-ip">{{server}}</p>
             <p class="mb-0 server-counter d-md-block d-none">ÚNETE A <span id="server-counter">0</span> OTROS JUGADORES</p>
-            <p class="mb-0 server-counter d-block d-md-none"><span id="server-counter-2">0</span> PLAYERS</p>
+            <p class="mb-0 server-counter d-block d-md-none"><span id="server-counter-2">0</span> JUGADORES</p>
          </div>
       </button>
       <a class="logo-holder" href="/">
@@ -68,7 +68,7 @@
             <div class="d-flex justify-content-center align-items-center">
                <img src="https://mc-heads.net/avatar/{{basket.ign}}/48" class="me-2 drop-shadow">
                <div class="info d-flex justify-content-center align-items-start flex-column">
-                  <span class="sml">CESTA DE</span>
+                  <span class="sml">CARRITO DE</span>
                   <span class="big">{{basket.ign}}</span>
                </div>
             </div>
